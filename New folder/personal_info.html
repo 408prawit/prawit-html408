@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลส่วนบุคคล</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ข้อมูลส่วนบุคคล</h1>
+        <div class="personal-info" id="personal-info">
+        </div>
+        <a href="javascript:history.back()" class="back-link btn">กลับไปหน้าก่อนหน้า</a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const studentId = urlParams.get('id');
+
+        const students = {
+            '001': { 
+                name: 'สมชาย ใจดี', 
+                studentId: '0000000000', 
+                age: 23, 
+                major: 'วิศวกรรมคอมพิวเตอร์',
+                gpa: 3.75,
+                image: 'https://i.postimg.cc/vHqLGhzC/image.webp'
+            },
+            '002': { 
+                name: 'สมหญิง รักเรียน', 
+                studentId: '0000000000', 
+                age: 21, 
+                major: 'บริหารธุรกิจ',
+                gpa: 3.89,
+                image: 'https://i.postimg.cc/wjnXmBnV/image.webp'
+            },
+            '003': { 
+                name: 'มานะ ขยัน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/mD9BgmCj/image.webp'
+            },
+            '004': { 
+                name: 'วิชัย เก่งกาจ', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/GpWnVvVy/image.webp'
+            },
+            '005': { 
+                name: 'แก้วตา สดใส', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/brj8D1Rh/image.webp'
+            },
+            '006': { 
+                name: 'สมชาย ใจดี', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/QM9rff4D/image.webp'
+            },
+            '007': { 
+                name: 'สมหญิง รักเรียน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/15ssyct0/image.webp'
+            },
+            '008': { 
+                name: 'มานะ ขยัน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/W14VkN0h/image.webp'
+            },
+            '009': { 
+                name: 'วิชัย เก่งกาจ', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/yYjBxggM/image.webp'
+            },
+            '010': { 
+                name: 'แก้วตา สดใส', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/P5FjbgMK/image.webp'
+            },
+            '011': { 
+                name: 'สมชาย ใจดี', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/qR2HTzHZ/image.webp'
+            },
+            '012': { 
+                name: 'สมหญิง รักเรียน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/Fzgvj1PJ/image.webp'
+            },
+
+            '013': { 
+                name: 'มานะ ขยัน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/QNpjLnXx/image.webp'
+            },
+            '014': { 
+                name: 'วิชัย เก่งกาจ', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/J0mV4M17/image.webp'
+            },
+            '015': { 
+                name: 'แก้วตา สดใส', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '016': { 
+                name: 'สมหญิง รักเรียน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '017': { 
+                name: 'มานะ ขยัน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '018': { 
+                name: 'วิชัย เก่งกาจ', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '019': { 
+                name: 'แก้วตา สดใส', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '020': { 
+                name: 'สมชาย ใจดี', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '021': { 
+                name: 'สมหญิง รักเรียน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '022': { 
+                name: 'มานะ ขยัน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '023': { 
+                name: 'วิชัย เก่งกาจ', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '024': { 
+                name: 'แก้วตา สดใส', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '025': { 
+                name: 'สมชาย ใจดี', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '026': { 
+                name: 'สมหญิง รักเรียน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '027': { 
+                name: 'มานะ ขยัน', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '028': { 
+                name: 'วิชัย เก่งกาจ', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '029': { 
+                name: 'แก้วตา สดใส', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            '030': { 
+                name: 'สมชาย ใจดี', 
+                studentId: '0000000000', 
+                age: 22, 
+                major: 'วิทยาการคอมพิวเตอร์',
+                gpa: 3.65,
+                image: 'https://i.postimg.cc/sg1F2nRW/image.webp'
+            },
+            
+        };
+
+        const student = students[studentId];
+        const personalInfo = document.getElementById('personal-info');
+        
+        if (student) {
+            personalInfo.innerHTML = `
+                <img src="${student.image}" alt="${student.name}" class="student-image">
+                <h2>${student.name}</h2>
+                <table class="info-table">
+                    <tr>
+                        <th>รหัสนักศึกษา:</th>
+                        <td>${student.studentId}</td>
+                    </tr>
+                    <tr>
+                        <th>อายุ:</th>
+                        <td>${student.age} ปี</td>
+                    </tr>
+                    <tr>
+                        <th>สาขาวิชา:</th>
+                        <td>${student.major}</td>
+                    </tr>
+                    <tr>
+                        <th>เกรดเฉลี่ย:</th>
+                        <td>${student.gpa}</td>
+                    </tr>
+                </table>
+            `;
+        } else {
+            personalInfo.innerHTML = '<p>ไม่พบข้อมูลนักศึกษา</p>';
+        }
+    </script>
+</body>
+</html>

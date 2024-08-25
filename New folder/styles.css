@@ -1,0 +1,279 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #bfddff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #1a237e;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+a {
+    color: #1a237e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3f51b5;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #1a237e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3f51b5;
+    color: #fff;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* index.html */
+.class-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.class-list li {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.class-list li:hover {
+    transform: translateY(-5px);
+}
+
+/* class_details.html */
+.member-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.member {
+    background: #fff;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.member:hover {
+    transform: translateY(-5px);
+}
+
+.member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #1a237e;
+}
+
+/* personal_info.html */
+.personal-info {
+    background: #fff;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.personal-info img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border: 5px solid #1a237e;
+}
+
+.personal-info h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.personal-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.student-table th,
+.student-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.student-table th {
+    background-color: #1a237e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.student-table tr:last-child td {
+    border-bottom: none;
+}
+
+.student-table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.btn-small {
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+.student-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border: 5px solid #1a237e;
+}
+
+.info-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.info-table th,
+.info-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.info-table th {
+    width: 40%;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+.info-table tr:last-child th,
+.info-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .student-table th,
+    .student-table td {
+        padding: 8px 10px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+    }
+
+    .member {
+        width: calc(50% - 30px);
+    }
+
+    .personal-info {
+        padding: 20px;
+    }
+
+    .student-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .info-table th,
+    .info-table td {
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .student-table {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .member {
+        width: 100%;
+    }
+
+    .student-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-table th,
+    .info-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .info-table th {
+        padding-bottom: 0;
+    }
+
+    .info-table td {
+        padding-top: 0;
+        padding-bottom: 10px;
+    }
+}

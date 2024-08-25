@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดรุ่น</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>รายละเอียดรุ่น <span id="class-year"></span></h1>
+        <table class="student-table">
+            <thead>
+                <tr>
+                    <th>รหัสนักศึกษา</th>
+                    <th>ชื่อ-นามสกุล</th>
+                    <th>ดูข้อมูล</th>
+                </tr>
+            </thead>
+            <tbody id="student-list">
+            </tbody>
+        </table>
+        <a href="index.html" class="back-link btn">กลับไปหน้ารายชื่อรุ่นทั้งหมด</a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const classYear = urlParams.get('class');
+        document.getElementById('class-year').textContent = classYear;
+
+        const studentList = document.getElementById('student-list');
+        const students = [
+            { id: '001', name: 'สมชาย ใจดี', studentId: `${classYear}001` },
+            { id: '002', name: 'สมหญิง รักเรียน', studentId: `${classYear}002` },
+            { id: '003', name: 'มานะ ขยัน', studentId: `${classYear}003` },
+            { id: '004', name: 'วิชัย เก่งกาจ', studentId: `${classYear}004` },
+            { id: '005', name: 'แก้วตา สดใส', studentId: `${classYear}005` },
+            { id: '006', name: 'สมชาย ใจดี', studentId: `${classYear}006` },
+            { id: '007', name: 'สมหญิง รักเรียน', studentId: `${classYear}007` },
+            { id: '008', name: 'มานะ ขยัน', studentId: `${classYear}008` },
+            { id: '009', name: 'วิชัย เก่งกาจ', studentId: `${classYear}009` },
+            { id: '010', name: 'แก้วตา สดใส', studentId: `${classYear}010` },
+            { id: '011', name: 'สมชาย ใจดี', studentId: `${classYear}011` },
+            { id: '012', name: 'สมหญิง รักเรียน', studentId: `${classYear}012` },
+            { id: '013', name: 'มานะ ขยัน', studentId: `${classYear}013` },
+            { id: '014', name: 'วิชัย เก่งกาจ', studentId: `${classYear}014` },
+            { id: '015', name: 'แก้วตา สดใส', studentId: `${classYear}015` },
+            { id: '016', name: 'สมชาย ใจดี', studentId: `${classYear}016` },
+            { id: '017', name: 'สมหญิง รักเรียน', studentId: `${classYear}017` },
+            { id: '018', name: 'มานะ ขยัน', studentId: `${classYear}018` },
+            { id: '019', name: 'วิชัย เก่งกาจ', studentId: `${classYear}019` },
+            { id: '020', name: 'แก้วตา สดใส', studentId: `${classYear}020` },
+            { id: '021', name: 'สมชาย ใจดี', studentId: `${classYear}021` },
+            { id: '022', name: 'สมหญิง รักเรียน', studentId: `${classYear}022` },
+            { id: '023', name: 'มานะ ขยัน', studentId: `${classYear}023` },
+            { id: '024', name: 'วิชัย เก่งกาจ', studentId: `${classYear}024` },
+            { id: '025', name: 'แก้วตา สดใส', studentId: `${classYear}025` },
+            { id: '026', name: 'สมชาย ใจดี', studentId: `${classYear}026` },
+            { id: '027', name: 'สมหญิง รักเรียน', studentId: `${classYear}027` },
+            { id: '028', name: 'มานะ ขยัน', studentId: `${classYear}028` },
+            { id: '029', name: 'แก้วตา สดใส', studentId: `${classYear}029` },
+            { id: '030', name: 'สมชาย ใจดี', studentId: `${classYear}030` },
+            
+        ];
+
+        students.forEach(student => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${student.studentId}</td>
+                <td>${student.name}</td>
+                <td><a href="personal_info.html?id=${student.id}" class="btn btn-small">ดูข้อมูล</a></td>
+            `;
+            studentList.appendChild(row);
+        });
+    </script>
+</body>
+</html>
